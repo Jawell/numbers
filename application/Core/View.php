@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class View
 {
     public function generate($body, $data = NULL) {
