@@ -2,7 +2,8 @@
 
 class View
 {
-    public function generate($data = NULL) {
-        include_once "application/view/main.php";
+    public function generate($body, $data = NULL) {
+        $body .= ".php";
+        include_once "application/view/" . $body;
     }
 }
