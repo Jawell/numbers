@@ -7,17 +7,17 @@ class Router
         unset ($_GET['route']);
         if ($route == 'index') {
             $controllerName = Paths::CONTROLLER . Paths::DEFAULT_CONTROLLER;
-            $action = Paths::ACTION . Paths::DEFAULT_ACTION;
+            $action = Paths::DEFAULT_ACTION;
             $controller = new $controllerName;
             $controller->$action();
         } else {
             $route = trim($route, '/\\');
             $parts = explode('/', $route);
-            $path = Paths::HOME . Paths::CONTROLLER_PATH . Paths::CONTROLLER . $parts[0] . '.php';
+            $path = Paths::CONTROLLER_PATH . Paths::CONTROLLER . $parts[0] . '.php';
             if (file_exists($path)) {
                 $controllerName = Paths::CONTROLLER . $parts[0];
                 $controller = new $controllerName;
-                $action = (empty($parts[1])) ? Paths::ACTION . Paths::DEFAULT_ACTION : Paths::ACTION . $parts[1];
+                $action = (empty($parts[1])) ? Paths::DEFAULT_ACTION : $parts[1];
                 if (method_exists($controller, $action)) {
                     $controller->$action();
                 }
