@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-class Main
+class Converter
 {
     function toRoman($f)
     {
-        if (!is_numeric($f) || $f <= 0) {
-            return false;
-        }
         $roman = array('M' => 1000, 'D' => 500, 'C' => 100, 'L' => 50, 'X' => 10, 'V' => 5, 'I' => 1);
         foreach ($roman as $k => $v) {
             if (($amount[$k] = floor($f / $v)) > 0) {
@@ -26,9 +23,6 @@ class Main
 
     function toDecimal($str = '')
     {
-        if (is_numeric($str)) {
-            return false;
-        }
         $roman = array('M' => 1000, 'D' => 500, 'C' => 100, 'L' => 50, 'X' => 10, 'V' => 5, 'I' => 1);
         for ($i = 0; $i < strlen($str); $i++) {
             if (isset($roman[strtoupper($str[$i])])) {
