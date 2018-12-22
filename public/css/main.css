@@ -1,0 +1,14 @@
+#result {
+    width: 225px;
+    height: 36px;
+    background: wheat;
+    font-size: 32px;
+    text-align: center;
+}
+
+#number {
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 32px;
+    outline: none;
+}
