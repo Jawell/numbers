@@ -4,7 +4,8 @@ namespace App\Core;
 
 class Router
 {
-    function start() {
+    function start()
+    {
         $route = (empty($_GET['route'])) ? 'index' : $_GET['route'];
         unset ($_GET['route']);
         if ($route == 'index') {

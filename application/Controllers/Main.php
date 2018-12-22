@@ -14,7 +14,8 @@ class Main extends BaseController
         $this->model = new MainModel();
     }
 
-    public function index() {
+    public function index()
+    {
         $this->view->generate("main");
     }
 }
