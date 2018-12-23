@@ -4,6 +4,8 @@ $(document).ready(function () {
             if(this.value != null) {
                 sendData(e.target.value);
             }
+        } else if(this.value === "") {
+            $("#result").html("");
         }
     });
 });
