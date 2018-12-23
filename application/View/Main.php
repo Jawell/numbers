@@ -14,7 +14,54 @@
     <title>Decimal↔Roman converter</title>
 </head>
 <body>
-<label>Number<input name="number" type="text" class="form-control" id="number" placeholder="Type roman or decimal number"></label>
-<div id="result"></div>
+<div class="container">
+    <p>Arabic ⇄ Roman</p>
+    <div class="numeral group">
+        <input type="text" id="number" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Numeral</label>
+    </div>
+    <div>
+        <div id="result"></div>
+        <div class="copy-button"></div>
+    </div>
+</div>
+<table class="legend">
+    <tbody>
+    <tr>
+        <td>Римская цифра</td>
+        <td>Арабская цифра</td>
+    </tr>
+    <tr>
+        <td>I</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>V</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>500</td>
+    </tr>
+    <tr>
+        <td>M</td>
+        <td>1000</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
