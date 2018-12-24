@@ -24,6 +24,8 @@ class Converter extends BaseController
         $data = $_POST['number'];
         if (is_numeric($data) && ($data >= 0 && $data <= 3999)) {
             $this->response($this->model->toRoman($data));
+        } else if ($data >= 4000) {
+            $this->response("max: 3999");
         } else {
             if (preg_match("/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/", strtoupper($data))) {
                 $this->response($this->model->toDecimal($data));
