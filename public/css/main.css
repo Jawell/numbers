@@ -1,3 +1,28 @@
+@media screen and (max-width: 576px) {
+    /* main label */
+    .container p {
+        font-size: 28px;
+    }
+
+    /* input for numeral */
+    input {
+        width: 225px;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    /* main label */
+    .container p {
+        font-size: 36px;
+    }
+
+    /* input for numeral */
+    input {
+        width: 300px;
+    }
+}
+
+/* colors */
 :root {
     --accent-color: #be0000;
     --backgound-color: black;
@@ -18,6 +43,12 @@ body {
     grid-template-rows: 100vh 1fr;
 }
 
+.wrapper {
+    max-width: 800px;
+    width: 100%;
+    justify-self: center;
+}
+
 #result {
     width: 225px;
     height: 36px;
@@ -35,20 +66,41 @@ body {
 
 .container p {
     color: var(--main-color);
-    font-size: 36px;
+}
+
+.legend {
+    color: var(--main-color);
+    text-align: justify;
 }
 
 table.legend {
     width: 200px;
+    margin: 10px 0 10px 5px;
 }
 
 table.legend, td {
-    color: var(--main-color);
     border: 1px solid white;
 }
 
 table.legend td {
     padding-left: 5px;
+}
+
+article.legend {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.legend h2 {
+    margin-bottom: 5px;
+}
+
+.legend > div:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.legend > div p {
+    font-size: 16px;
 }
 
 .group {
@@ -61,7 +113,6 @@ input {
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 300px;
     border: none;
     border-bottom: 1px solid #757575;
     color: var(--main-color);
@@ -73,7 +124,7 @@ input:focus {
     outline: none;
 }
 
-/* LABEL ======================================= */
+/* label */
 label {
     color: #999;
     font-size: 18px;
@@ -94,7 +145,7 @@ input:focus ~ label, input:valid ~ label {
     color: var(--accent-color);
 }
 
-/* BOTTOM BARS ================================= */
+/* bottom bars */
 .bar {
     position: relative;
     display: block;
@@ -126,7 +177,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
     width: 50%;
 }
 
-/* HIGHLIGHTER ================================== */
+/* highlighter */
 .highlight {
     position: absolute;
     height: 60%;
@@ -144,7 +195,7 @@ input:focus ~ .highlight {
     animation: inputHighlighter 0.3s ease;
 }
 
-/* ANIMATIONS ================ */
+/* animations */
 @-webkit-keyframes inputHighlighter {
     from {
         background: var(--accent-color);
