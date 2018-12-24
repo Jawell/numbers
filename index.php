@@ -2,9 +2,10 @@
 
 use App\Core\Router;
 
-$loader = require_once 'application/Core/Autoloader.php';
-$loader->addNamspacePath('App', __DIR__ . '/application');
-
 session_start();
+
+$loader = require_once 'application/Core/Autoloader.php';
+$loader->addNamespacePath('App', __DIR__ . '/application');
+
 $router = new Router;
 $router->start();

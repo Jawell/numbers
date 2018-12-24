@@ -1,34 +1,57 @@
 <?php
 
+/**
+ * Class Autoloader
+ */
 class Autoloader
 {
+    /**
+     * @var
+     */
     protected static $instance;
+    /**
+     * @var array
+     */
     protected static $map = [];
 
+    /**
+     * Autoloader constructor.
+     */
     protected function __construct()
     {
         spl_autoload_register([$this, 'load']);
     }
 
-    public function addNamspacePath($namespace, $root_path)
+    /**
+     * @param $namespace
+     * @param $root_path
+     */
+    public function addNamespacePath($namespace, $root_path)
     {
         self::$map[$namespace] = $root_path;
     }
 
-    public function load($classname)
+    /**
+     * @param $className
+     */
+    public function load($className)
     {
-        if ($path = $this->getClassPath($classname)) {
+        if ($path = $this->getClassPath($className)) {
             require_once $path;
         }
     }
 
-    protected function getClassPath($classname)
+    /**
+     * @param $className
+     * @return bool|string
+     */
+    protected function getClassPath($className)
     {
-        $class_path = $classname . '.php';
+        $class_path = $className . '.php';
         if (!empty(self::$map)) {
             foreach (self::$map as $name => $path) {
                 $lookup_pattern = sprintf('/^%s/', $name);
-                if (preg_match($lookup_pattern, $classname)) {
+                if (preg_match($lookup_pattern, $className)) {
                     $class_path = preg_replace($lookup_pattern, $path, $class_path);
                     break;
                 }
@@ -38,6 +61,9 @@ class Autoloader
         return realpath(str_replace('\\', '/', $class_path));
     }
 
+    /**
+     * @return Autoloader
+     */
     public static function getInstance()
     {
         if (null === self::$instance) {

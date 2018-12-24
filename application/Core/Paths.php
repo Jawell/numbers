@@ -2,6 +2,10 @@
 
 namespace App\Core;
 
+/**
+ * Class Paths
+ * @package App\Core
+ */
 class Paths
 {
     const HOME = 'application/';
