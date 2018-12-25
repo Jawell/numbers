@@ -27,7 +27,7 @@ class Router
             $parts = explode('/', $route);
             $path = __DIR__ . "/../" . Paths::CONTROLLER_PATH . ucfirst($parts[0]) . '.php';
             if (file_exists($path)) {
-                $controllerName = $parts[0];
+                $controllerName = ucfirst($parts[0]);
                 $classPath = "\\App\Controllers\\$controllerName";
                 $controller = new $classPath;
                 $action = (empty($parts[1])) ? Paths::DEFAULT_ACTION : $parts[1];
