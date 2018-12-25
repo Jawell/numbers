@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/converter.js"></script>
 
-    <title>Decimal↔Roman converter</title>
+    <title>Arabic↔Roman converter</title>
 </head>
 <body>
 <div class="container">
