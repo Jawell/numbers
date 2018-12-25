@@ -2,7 +2,6 @@ $(document).ready(function () {
     let regex = new RegExp(/^$|[^0-9ivxlcdmIVXLCDM$]/);
 
     $("#number").on("paste keyup", function (e) {
-        console.log(!regex.test(this.value));
         if (!regex.test(this.value)) {
             sendData(e.target.value);
         } else if (this.value === "") {
@@ -25,12 +24,10 @@ $(document).ready(function () {
             data: "number=" + data,
             dataType: 'json',
             success: function (response) {
-                console.log(response);
                 $("#result").html(response.answer);
                 $(".copy-button").addClass("copy-display");
             },
             error: function (response) {
-                console.log(response);
                 $("#result").html(response.answer);
             }
         });
