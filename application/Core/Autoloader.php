@@ -15,6 +15,8 @@ class Autoloader
     protected static $map = [];
 
     /**
+     * Define "load" as autoloader method
+     *
      * Autoloader constructor.
      */
     protected function __construct()
@@ -23,6 +25,8 @@ class Autoloader
     }
 
     /**
+     * Add namespace to autoloader map
+     *
      * @param $namespace
      * @param $root_path
      */
@@ -32,6 +36,8 @@ class Autoloader
     }
 
     /**
+     * Autoloader
+     *
      * @param $className
      */
     public function load($className)
@@ -42,6 +48,8 @@ class Autoloader
     }
 
     /**
+     * Get path to php file
+     *
      * @param $className
      * @return bool|string
      */
@@ -62,6 +70,8 @@ class Autoloader
     }
 
     /**
+     * Get instance if exist
+     *
      * @return Autoloader
      */
     public static function getInstance()

@@ -12,6 +12,8 @@ use App\Core\View;
 class Main extends BaseController
 {
     /**
+     * Get instance of view class
+     *
      * Main constructor.
      */
     public function __construct()
@@ -19,6 +21,9 @@ class Main extends BaseController
         $this->view = new View();
     }
 
+    /**
+     * Generate main page
+     */
     public function index()
     {
         $this->view->generate("Main");

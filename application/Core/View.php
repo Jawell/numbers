@@ -9,6 +9,8 @@ namespace App\Core;
 class View
 {
     /**
+     * Display page
+     *
      * @param $body
      * @param null $data
      */

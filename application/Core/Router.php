@@ -8,11 +8,15 @@ namespace App\Core;
  */
 class Router
 {
+
+    /**
+     * Parse url
+     */
     function start()
     {
         $route = (empty($_GET['route'])) ? 'index' : $_GET['route'];
         unset ($_GET['route']);
-        if ($route == 'index') {
+        if ($route == 'index') {    //if root url, call default controller and action
             $controllerName = Paths::DEFAULT_CONTROLLER;
             $action = Paths::DEFAULT_ACTION;
             $classPath = "\\App\Controllers\\$controllerName";
@@ -31,11 +35,9 @@ class Router
                     $controller->$action();
                 }
             } else {
-                //TODO: error
-                $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
                 header('HTTP/1.1 404 Not Found');
                 header("Status: 404 Not Found");
-                header('Location:'.$host.'error');
+                header('Location: /error');
             }
         }
     }

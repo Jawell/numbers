@@ -11,6 +11,8 @@ class Converter
     const ALPHABET = array('M' => 1000, 'D' => 500, 'C' => 100, 'L' => 50, 'X' => 10, 'V' => 5, 'I' => 1);
 
     /**
+     * Convert arabic to roman numeral
+     *
      * @param $number
      * @return mixed
      */
@@ -25,7 +27,7 @@ class Converter
 
         $return = '';
         $oldKey = '';
-        foreach ($amount as $key => $value) {
+        foreach ($amount as $key => $value) {   //Give string with chars
             $return .= ($value <= 3) ? str_repeat($key, $value) : $key . $oldKey;
             $oldKey = $key;
         }
@@ -33,10 +35,12 @@ class Converter
     }
 
     /**
+     * Convert arabic to roman numeral
+     *
      * @param string $str
      * @return float|int|mixed
      */
-    function toDecimal($str = '')
+    function toArabic($str = '')
     {
         $values = [];
         for ($i = 0; $i < strlen($str); $i++) {
