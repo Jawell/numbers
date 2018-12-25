@@ -24,7 +24,7 @@
     </div>
     <div>
         <div id="result"></div>
-        <div class="copy-button"></div>
+        <div class="copy-button">Copy</div>
     </div>
 </div>
 <div class="wrapper">

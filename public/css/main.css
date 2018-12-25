@@ -1,27 +1,3 @@
-@media screen and (max-width: 576px) {
-    /* main label */
-    .container p {
-        font-size: 28px;
-    }
-
-    /* input for numeral */
-    input {
-        width: 225px;
-    }
-}
-
-@media screen and (min-width: 577px) {
-    /* main label */
-    .container p {
-        font-size: 36px;
-    }
-
-    /* input for numeral */
-    input {
-        width: 300px;
-    }
-}
-
 /* colors */
 :root {
     --accent-color: #be0000;
@@ -38,8 +14,7 @@ body {
     display: grid;
     background: var(--backgound-color);
     font-family: Montserrat, sans-serif;
-    grid-template-areas: "body"
-                            "legend";
+    grid-template-areas: "body" "legend";
     grid-template-rows: 100vh 1fr;
 }
 
@@ -56,6 +31,27 @@ body {
     text-align: center;
     margin: 0 auto;
     color: var(--main-color);
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#result::selection {
+    background: black;
+}
+
+.copy-button {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3px 5px 3px 5px;
+    border: 1px solid white;
+    opacity: 0;
+    cursor: default;
+}
+
+.copy-display {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .container {
@@ -103,6 +99,7 @@ article.legend {
     font-size: 16px;
 }
 
+/* input start */
 .group {
     position: relative;
     margin: 30px 30px;
@@ -223,5 +220,32 @@ input:focus ~ .highlight {
     to {
         width: 0;
         background: transparent;
+    }
+}
+
+/* input end */
+
+/* responsive */
+@media screen and (max-width: 576px) {
+    /* main label */
+    .container p {
+        font-size: 28px;
+    }
+
+    /* input for numeral */
+    input {
+        width: 225px;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    /* main label */
+    .container p {
+        font-size: 36px;
+    }
+
+    /* input for numeral */
+    input {
+        width: 300px;
     }
 }
